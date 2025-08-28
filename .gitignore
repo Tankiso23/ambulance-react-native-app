@@ -2,12 +2,15 @@
 
 # dependencies
 node_modules/
+.pnp
+.pnp.js
 
 # Expo
 .expo/
 dist/
 web-build/
 expo-env.d.ts
+.expo-share
 
 # Native
 .kotlin/
@@ -20,6 +23,7 @@ expo-env.d.ts
 
 # Metro
 .metro-health-check*
+metro-cache
 
 # debug
 npm-debug.*
@@ -37,3 +41,16 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+
+# android/ios build folders
+/android
+/ios
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# testing
+coverage/
