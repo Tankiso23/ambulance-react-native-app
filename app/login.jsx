@@ -1,3 +1,4 @@
+import { Link } from 'expo-router';
 import { useState } from 'react';
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 function login(){
@@ -35,13 +36,26 @@ return(
         style={styles.inputs}
         placeholder='password'
         value={password}
+        secureTextEntry={true}
         onChangeText={setPassword}
+        
       />
-      </View>
 
-      <TouchableOpacity style={styles.button}>
+       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>LOGIN</Text>
       </TouchableOpacity>
+
+      <view style={styles.linkBox}>
+       
+        <Link href={"#"} style={styles.linkstyle}>Forgot Password</Link>
+       
+        
+        <Link href="/createAccount" style={styles.linkstyle}>Create account</Link>
+       
+      </view>
+      </View>
+
+     
   </View>
 );
 }
@@ -57,8 +71,8 @@ const styles = StyleSheet.create({
     padding: "200px",
   },
   imageLogo:{
-    width: 120,
-    height: 120,
+    width: 150,
+    height: 150,
     marginBottom: 20, 
     resizeMode: 'contain',
   },
@@ -68,12 +82,15 @@ const styles = StyleSheet.create({
     fontSize: '48px',
     fontFamily: 'Jaro',
     textDecorationLine: 'underline',
+    padding: "20px",
 
   },
   inputBox:{
     width: "100%",
-    backgroundColor: "#eee",
+    backgroundColor: "#cbbfbfff",
     borderRadius: 10,
+    borderColor: "#bb2121ff",
+    borderWidth: 2,
     padding: 10,
     marginBottom: 20,
     
@@ -90,11 +107,12 @@ const styles = StyleSheet.create({
     
   },
   button:{
-    backgroundColor: "#0321a5ff",
-    paddingVertical: 12,
-    paddingHorizontal: 30,
+    backgroundColor: "#06defadf",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
     borderRadius: 8,
-    marginBottom: 15,
+    marginBottom: 20,
+    alignSelf: 'center',
   },
   buttonText:{
     color: "white",
@@ -102,4 +120,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
   },
+  linkBox:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: "100%",
+    paddingHorizontal: 20,
+    alignSelf: 'center',
+  },
+  linkstyle:{
+    fontSize:16,
+    fontFamily: "Afacad",
+    color: "#0929F4",
+    paddingRight: 150,
+    textAlignVertical: 'auto',
+    
+  }
 })
